@@ -62,7 +62,7 @@ app.get("/", async (req, res) => {
       throw response.data["response_code"];
     }
     let question = analyseResponse(response);
-    res.render("index.ejs", { categories: categories, question: question });
+    res.render("index.ejs", { categories: categories, question: question, autofill: { category: '', difficulty: ''} });
   } catch (error) {
     if (error === '1') {
       res.render("index.ejs", { categories: categories, error: "There are no questions that match the chosen criteria."})
@@ -86,10 +86,10 @@ app.post("/", async (req, res) => {
       throw response.data["response_code"];
     }
     let question = analyseResponse(response);
-    res.render("index.ejs", { categories: categories, question: question })
+    res.render("index.ejs", { categories: categories, question: question, autofill: { category: `${categoryId}`, difficulty: `${difficulty}`}  })
   } catch (error) {
     if (error === '1') {
-      res.render("index.ejs", { categories: categories, error: "There are no questions that match the chosen criteria."})
+      res.render("index.ejs", { categories: categories, error: "There are no questions that match the chosen criteria." })
     } else if (error === '2') {
       res.render("index.ejs", { categories: categories, error: "The requested query is invalid."})
     } else {
