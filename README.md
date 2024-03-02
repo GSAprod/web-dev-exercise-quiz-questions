@@ -1,6 +1,6 @@
 # web-dev-exercise-quiz-questions
 
-A concept of a website that shows a question (supplied by an API) everytime the user loads up the webpage.
+A small webapp that shows a question (supplied by an API) everytime the user loads up the webpage.
 The user is able to filter the questions shown by category or difficulty level. 
 
 This project is based on a capstone project from Udemy's "The Complete 2023 Web Developer Bootcamp", created by the App Brewery team. 
